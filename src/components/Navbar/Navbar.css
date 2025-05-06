@@ -1,0 +1,184 @@
+.navbar {
+   padding: 20px 0px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: all 0.3s ease-in-out;
+}
+
+.navbar .logo {
+   width: 150px;
+   transition: transform 0.3s ease-in-out;
+}
+
+.navbar .logo:hover {
+   transform: scale(1.1);
+}
+
+.navbar-menu {
+   display: flex;
+   list-style: none;
+   gap: 20px;
+   color: #49557e;
+   font-size: 18px;
+}
+
+
+.navbar-menu li {
+   cursor: pointer;
+   position: relative;
+   font-size: 20px;
+   font-weight: 700;
+   transition: color 0.3s ease-in-out;
+   padding: 10px 15px;
+}
+
+
+.navbar-menu li:hover {
+   color: #49557e; 
+}
+
+.navbar-menu .active {
+   color: tomato;
+}
+
+
+.navbar-menu .active::after {
+   content: "";
+   width: 100%;
+   height: 3px;
+   background-color: tomato;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   transition: width 0.3s ease-in-out;
+}
+
+
+.navbar-menu li::after {
+   content: "";
+   width: 0;
+   height: 3px;
+   background-color: transparent;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+.navbar-menu .active::after {
+   width: 100%;
+   background-color: tomato;
+}
+
+.navbar-right {
+   display: flex;
+   align-items: center;
+   gap: 40px;
+}
+
+.navbar button {
+   background-color: tomato;
+   font-size: 16px;
+   font-weight: 700;
+   color: white;
+   border: 2px solid rgb(243, 146, 146);
+   padding: 10px 30px;
+   border-radius: 50px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.navbar button:hover {
+   background-color: rgb(232, 107, 85);
+   color:white;
+   transform: scale(1.05);
+}
+
+.navbar-search-icon {
+   position: relative;
+   transition: transform 0.3s ease-in-out;
+}
+
+.navbar-search-icon:hover {
+   transform: rotate(15deg);
+}
+
+.navbar-search-icon .dot {
+   position: absolute;
+   min-width: 10px;
+   min-height: 10px;
+   background-color: tomato;
+   border-radius: 50%;
+   top: -8px;
+   right: -8px;
+   animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+   0% {
+       transform: scale(1);
+       opacity: 1;
+   }
+   50% {
+       transform: scale(1.3);
+       opacity: 0.7;
+   }
+   100% {
+       transform: scale(1);
+       opacity: 1;
+   }
+}
+
+@media (max-width:1050px) {
+   .navbar.logo{
+      width: 140px;
+   }
+   .navbar-menu{
+      gap: 20px;
+      font-size: 17px;
+   }
+   .navbar-right{
+      gap: 30px;
+
+   }
+   .navbar-right img{
+      width: 22px;
+
+   }
+   .navbar-right button{
+      padding: 8px 25px;
+   }
+}
+
+@media (max-width:900px) {
+   .navbar.logo{
+      width: 120px;
+   }
+   .navbar-menu{
+      gap: 15px;
+      font-size: 16px;
+   }
+   .navbar-right{
+      gap: 20px;
+
+   }
+   .navbar-right img{
+      width: 20px;
+
+   }
+   .navbar-right button{
+      padding: 7px 20px;
+      font-size: 15px;
+   }
+}
+
+
+@media (max-width:750px) {
+  
+   .navbar-menu{
+      display: none;
+   }
+   
+}
